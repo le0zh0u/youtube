@@ -10,6 +10,17 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var videos: [Video] = {
+       var blankSpaceVideo = Video()
+        blankSpaceVideo.title = "Taylor Swift - Black Space"
+        blankSpaceVideo.thumbnailImageName = "taylor_swift_profile"
+        
+        var badBloodVideo = Video()
+        badBloodVideo.title = "Taylor Swift - Bad Blood featuring Kendrick Lamar"
+        badBloodVideo.thumbnailImageName = "taylor_swift_bad_blood"
+        return [blankSpaceVideo, badBloodVideo]
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +41,27 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
         setupMenuBar()
+        setupNavBarButtons()
+    }
+    
+    func setupNavBarButtons() {
+        let searchImage = UIImage(named: "search_icon")?.withRenderingMode(.alwaysTemplate)
+        
+        let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(handleSearch))
+        searchBarButtonItem.tintColor = UIColor.white
+        
+        let moreButton = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleMore))
+        moreButton.tintColor = UIColor.white
+        
+        navigationItem.rightBarButtonItems = [moreButton, searchBarButtonItem]
+    }
+    
+    @objc func handleMore() {
+        print(321)
+    }
+    
+    @objc func handleSearch() {
+        print(123)
     }
     
     let menuBar: MenuBar = {
@@ -45,11 +77,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return videos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! VideoCell
+        cell.video = videos[indexPath.item]
         return cell
     }
     
