@@ -26,3 +26,27 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
+
+extension UIImageView {
+    func loadImageUsingUrlString(urlString: String) {
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                // back to the main thread
+                DispatchQueue.main.async {
+                    self.image = UIImage(data: data!)
+                }
+            }
+            
+            /*let queue = DispatchQueue(label: "com.leozhou.youtube.videoCell")
+             queue.async {
+             self.image = UIImage(data: data!)
+             }*/
+            }.resume()
+    }
+}
