@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		902F07EE210DBD7300447538 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F07ED210DBD7300447538 /* SettingsLauncher.swift */; };
+		902F07F0210DC48600447538 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F07EF210DC48600447538 /* SettingCell.swift */; };
 		90609D0B210A19C7006F418D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D0A210A19C7006F418D /* Extensions.swift */; };
 		90609D0E210A1A53006F418D /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D0D210A1A53006F418D /* VideoCell.swift */; };
 		90609D11210A2162006F418D /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D10210A2162006F418D /* MenuBar.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		902F07ED210DBD7300447538 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		902F07EF210DC48600447538 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		90609D0A210A19C7006F418D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		90609D0D210A1A53006F418D /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		90609D10210A2162006F418D /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				90609D0D210A1A53006F418D /* VideoCell.swift */,
 				90609D10210A2162006F418D /* MenuBar.swift */,
+				902F07EF210DC48600447538 /* SettingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				902F07EE210DBD7300447538 /* SettingsLauncher.swift in Sources */,
 				90BC51662106256400470590 /* HomeController.swift in Sources */,
+				902F07F0210DC48600447538 /* SettingCell.swift in Sources */,
 				90609D14210A38FF006F418D /* Video.swift in Sources */,
 				90609D0E210A1A53006F418D /* VideoCell.swift in Sources */,
 				90609D0B210A19C7006F418D /* Extensions.swift in Sources */,
