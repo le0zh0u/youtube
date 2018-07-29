@@ -57,7 +57,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     self.videos?.append(video)
                 }
                 
-                self.collectionView?.reloadData()
+                DispatchQueue.global(qos: .userInitiated).async {
+                    // back to the main thread
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                    }
+                }
                 
             } catch let jsonError {
                 print(jsonError)
