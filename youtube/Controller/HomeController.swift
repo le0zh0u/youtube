@@ -109,11 +109,28 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationItem.rightBarButtonItems = [moreButton, searchBarButtonItem]
     }
     
-    let settingsLauncher = SettingsLauncher()
+    lazy var settingsLauncher: SettingsLauncher = {
+        let launcher = SettingsLauncher()
+        launcher.homeController = self
+        return launcher
+    }()
     
     @objc func handleMore() {
         //show menu
         settingsLauncher.showSettings()
+    
+    }
+    
+    func showControllerForSetting(setting: Setting){
+        let dummySettingViewController = UIViewController()
+        //set view background
+        dummySettingViewController.view.backgroundColor = UIColor.white
+        dummySettingViewController.navigationItem.title = setting.name.rawValue
+        //set navigation bar back button and title color
+        navigationController?.navigationBar.tintColor = UIColor.white
+        //set title color in navigationBar
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.pushViewController(dummySettingViewController, animated: true)
     }
     
     @objc func handleSearch() {
@@ -126,10 +143,22 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }()
     
     private func setupMenuBar(){
+        //hide navigationBar when swipe up , and show when swipe down
+        navigationController?.hidesBarsOnSwipe = true
+        
+        //fix galp between navigationBar and menuBar when swipe up
+        let redView = UIView()
+        redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
+        view.addSubview(redView)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: redView)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: redView)
+        
         view.addSubview(menuBar)
     
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
+        //fix the navBarBatton display when hide navigationBar
+        menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
