@@ -21,6 +21,7 @@
 		90BC516E2106256600470590 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90BC516C2106256600470590 /* LaunchScreen.storyboard */; };
 		90BC51792106256600470590 /* youtubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC51782106256600470590 /* youtubeTests.swift */; };
 		90BC51842106256600470590 /* youtubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC51832106256600470590 /* youtubeUITests.swift */; };
+		90DBE8332113586F00CD71D6 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DBE8322113586F00CD71D6 /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		90BC517F2106256600470590 /* youtubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = youtubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BC51832106256600470590 /* youtubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = youtubeUITests.swift; sourceTree = "<group>"; };
 		90BC51852106256600470590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90DBE8322113586F00CD71D6 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				90609D0D210A1A53006F418D /* VideoCell.swift */,
 				90609D10210A2162006F418D /* MenuBar.swift */,
 				902F07EF210DC48600447538 /* SettingCell.swift */,
+				90DBE8322113586F00CD71D6 /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				902F07EE210DBD7300447538 /* SettingsLauncher.swift in Sources */,
+				90DBE8332113586F00CD71D6 /* FeedCell.swift in Sources */,
 				90BC51662106256400470590 /* HomeController.swift in Sources */,
 				902F07F0210DC48600447538 /* SettingCell.swift in Sources */,
 				90609D14210A38FF006F418D /* Video.swift in Sources */,
