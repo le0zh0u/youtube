@@ -11,6 +11,7 @@
 		902F07F0210DC48600447538 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902F07EF210DC48600447538 /* SettingCell.swift */; };
 		9056410A2114B6A600B6E6B2 /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905641092114B6A600B6E6B2 /* TrendingCell.swift */; };
 		9056410C2114B91C00B6E6B2 /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9056410B2114B91C00B6E6B2 /* SubscriptionCell.swift */; };
+		9060986121160CD900815824 /* VideoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060986021160CD900815824 /* VideoLauncher.swift */; };
 		90609D0B210A19C7006F418D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D0A210A19C7006F418D /* Extensions.swift */; };
 		90609D0E210A1A53006F418D /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D0D210A1A53006F418D /* VideoCell.swift */; };
 		90609D11210A2162006F418D /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90609D10210A2162006F418D /* MenuBar.swift */; };
@@ -48,6 +49,7 @@
 		902F07EF210DC48600447538 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		905641092114B6A600B6E6B2 /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
 		9056410B2114B91C00B6E6B2 /* SubscriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCell.swift; sourceTree = "<group>"; };
+		9060986021160CD900815824 /* VideoLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLauncher.swift; sourceTree = "<group>"; };
 		90609D0A210A19C7006F418D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		90609D0D210A1A53006F418D /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		90609D10210A2162006F418D /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				90609D0A210A19C7006F418D /* Extensions.swift */,
+				9060986021160CD900815824 /* VideoLauncher.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				902F07F0210DC48600447538 /* SettingCell.swift in Sources */,
 				90609D14210A38FF006F418D /* Video.swift in Sources */,
 				90609D0E210A1A53006F418D /* VideoCell.swift in Sources */,
+				9060986121160CD900815824 /* VideoLauncher.swift in Sources */,
 				90B55F9221120D230094D0D4 /* ApiService.swift in Sources */,
 				90609D0B210A19C7006F418D /* Extensions.swift in Sources */,
 				90BC51642106256400470590 /* AppDelegate.swift in Sources */,

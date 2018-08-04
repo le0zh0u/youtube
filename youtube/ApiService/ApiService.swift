@@ -1,4 +1,4 @@
-//
+
 //  ApiService.swift
 //  youtube
 //
@@ -15,7 +15,7 @@ class ApiService: NSObject {
     let baseUrl = "https://s3-us-west-2.amazonaws.com/youtubeassets"
     
     func fetchVideos(completion: @escaping ([Video]) -> ()) {
-        fetchFeedForUrlString(urlSring: "\(baseUrl)/home.json", completion: completion)
+        fetchFeedForUrlString(urlSring: "\(baseUrl)/home_num_likes.json", completion: completion)
     }
     
     func fetchTrendingFeed(completion: @escaping ([Video]) -> ()) {
@@ -35,27 +35,15 @@ class ApiService: NSObject {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                var videos = [Video]()
-                for dictionary in json as! [[String: AnyObject]] {
-                    let video = Video()
-                    video.title = dictionary["title"] as? String
-                    video.thumbnailImageName = dictionary["thumbnail_image_name"] as? String
+                if let unwrappedData = data, let jsonDictionaries = try JSONSerialization.jsonObject(with: unwrappedData, options: .mutableContainers) as? [[String: AnyObject]]{
                     
-                    let channel = Channel()
-                    let channelDictionary = dictionary["channel"] as! [String: AnyObject]
-                    channel.name = channelDictionary["name"] as? String
-                    channel.profileImageName = channelDictionary["profile_image_name"] as? String
-                    video.channel = channel
-                    
-                    videos.append(video)
-                }
-                
-                DispatchQueue.global(qos: .userInitiated).async {
-                    // back to the main thread
-                    DispatchQueue.main.async {
-                        completion(videos)
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        // back to the main thread
+                        DispatchQueue.main.async {
+                            completion(jsonDictionaries.map({return Video(dictionary: $0)}))
+                        }
                     }
+                    
                 }
                 
             } catch let jsonError {
